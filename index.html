@@ -673,6 +673,57 @@
     color: white;
   }
 
+  /* ─── PROTECTED PHOTO REEL ─── */
+  #reel {
+    padding: 6rem 2rem;
+    background: var(--ivory);
+    position: relative;
+    z-index: 1;
+  }
+
+  .reel-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 5;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(200, 140, 80, 0.15);
+    /* Disables the right-click menu on mobile */
+    -webkit-touch-callout: none;
+  }
+
+  .reel-slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .reel-slide.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .reel-slide img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    
+    /* ─── ANTI-DOWNLOAD PROTECTIONS ─── */
+    pointer-events: none; /* Kills clicks and long-presses */
+    user-select: none; /* Kills highlighting */
+    -webkit-user-drag: none; /* Kills drag-to-desktop */
+  }
+
+  /* The invisible shield over the image */
+  .gallery-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 2;
+    background: transparent;
+  }
+
   /* ─── CLOSING SECTION ─── */
   #closing {
     padding: 7rem 2rem;
@@ -1179,7 +1230,7 @@
     <div class="event-card reveal">
       <span class="event-icon">🎵</span>
       <div class="event-name">Sur O Shaaj</div>
-      <div class="event-date">10 December 2026</div>
+      <div class="event-date">10 December 2026 at 8 PM IST</div>
       <div class="event-location">📍 <strong>Nagpur</strong></div>
       <p style="font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-style:italic;color:var(--text-light);margin-top:0.7rem;line-height:1.6;">An evening of music, melody, and merriment — where the celebration begins in song.</p>
       <span class="event-tag">Musical Evening</span>
@@ -1188,7 +1239,7 @@
     <div class="event-card reveal reveal-delay-1">
       <span class="event-icon">🌿</span>
       <div class="event-name">Gaye Holud</div>
-      <div class="event-date">11 December 2026</div>
+      <div class="event-date">11 December 2026 at 11 AM IST</div>
       <div class="event-location">📍 <strong>Nagpur</strong></div>
       <p style="font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-style:italic;color:var(--text-light);margin-top:0.7rem;line-height:1.6;">The golden ritual of turmeric — a Bengali blessing for the bride and groom.</p>
       <span class="event-tag">Haldi Ceremony</span>
@@ -1197,7 +1248,7 @@
     <div class="event-card reveal reveal-delay-2">
       <span class="event-icon">💍</span>
       <div class="event-name">Shubho Bibaho</div>
-      <div class="event-date">11 December 2026</div>
+      <div class="event-date">11 December 2026 at 7 PM IST</div>
       <div class="event-location">📍 <strong>Nagpur</strong></div>
       <p style="font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-style:italic;color:var(--text-light);margin-top:0.7rem;line-height:1.6;">The sacred wedding ceremony — two souls united under starlight and sacred fire.</p>
       <span class="event-tag">Wedding</span>
@@ -1206,7 +1257,7 @@
     <div class="event-card reveal reveal-delay-3" style="grid-column: auto;">
       <span class="event-icon">🎊</span>
       <div class="event-name">Bou Boron</div>
-      <div class="event-date">14 December 2026</div>
+      <div class="event-date">14 December 2026 at 8 PM IST</div>
       <div class="event-location">📍 <strong>Faridabad</strong></div>
       <p style="font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-style:italic;color:var(--text-light);margin-top:0.7rem;line-height:1.6;">The bride's welcome feast — celebrating her arrival into her new home and family.</p>
       <span class="event-tag">Reception</span>
@@ -1290,6 +1341,93 @@
         <a href="https://maps.app.goo.gl/awHQ32NtwrKJ6hxt8" target="_blank" class="map-link">View on Map</a>
       </div>
     </div>
+
+  </div>
+</section>
+
+<section id="reel">
+  <div class="section-label reveal">Our Memories</div>
+  <h2 class="section-title reveal reveal-delay-1">Photo Reel</h2>
+  <div class="section-divider reveal reveal-delay-2"><div class="divider-icon">📸</div></div>
+
+  <!-- oncontextmenu="return false;" completely kills the right-click menu -->
+  <div class="reel-container reveal reveal-delay-3" oncontextmenu="return false;">
+    
+    <!-- Slide 1 (Active by default) -->
+    <div class="reel-slide active">
+      <!-- Notice the file path points to the folder you created in Step 1 -->
+      <img src="photos/photo1.jpg" alt="Susmita and Arpan">
+      <div class="gallery-overlay"></div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="reel-slide">
+      <img src="photos/photo2.jpg" alt="Susmita and Arpan">
+      <div class="gallery-overlay"></div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="reel-slide">
+      <img src="photos/photo3.jpg" alt="Susmita and Arpan">
+      <div class="gallery-overlay"></div>
+    </div>
+    
+     <!-- Slide 4 -->
+    <div class="reel-slide">
+      <img src="photos/photo4.jpg" alt="Susmita and Arpan">
+      <div class="gallery-overlay"></div>
+    </div>
+
+     <!-- Slide 5 -->
+    <div class="reel-slide">
+      <img src="photos/photo5.jpg" alt="Susmita and Arpan">
+      <div class="gallery-overlay"></div>
+    </div>
+
+     <!-- Slide 6 -->
+    <div class="reel-slide">
+      <img src="photos/photo6.jpg" alt="Susmita and Arpan">
+      <div class="gallery-overlay"></div>
+    </div>
+
+     <!-- Slide 7 -->
+    <div class="reel-slide">
+      <img src="photos/photo7.jpg" alt="Susmita and Arpan">
+      <div class="gallery-overlay"></div>
+    </div>
+
+     <!-- Slide 8 -->
+    <div class="reel-slide">
+      <img src="photos/photo8.jpg" alt="Susmita and Arpan">
+      <div class="gallery-overlay"></div>
+    </div>
+
+     <!-- Slide 9 -->
+    <div class="reel-slide">
+      <img src="photos/photo9.jpg" alt="Susmita and Arpan">
+      <div class="gallery-overlay"></div>
+    </div>
+
+     <!-- Slide 10 -->
+    <div class="reel-slide">
+      <img src="photos/photo10.jpg" alt="Susmita and Arpan">
+      <div class="gallery-overlay"></div>
+    </div>
+
+     <!-- Slide 11 -->
+    <div class="reel-slide">
+      <img src="photos/photo11.jpg" alt="Susmita and Arpan">
+      <div class="gallery-overlay"></div>
+    </div>
+
+     <!-- Slide 12 -->
+    <div class="reel-slide">
+      <img src="photos/photo12.jpg" alt="Susmita and Arpan">
+      <div class="gallery-overlay"></div>
+    </div>
+
+     
+    <!-- Add more slides as needed following the same pattern -->
 
   </div>
 </section>
@@ -1536,6 +1674,20 @@ musicBtn.addEventListener('click', () => {
   }
   isPlaying = !isPlaying;
 });
+// ─── PHOTO REEL LOGIC ───
+(function() {
+  const slides = document.querySelectorAll('.reel-slide');
+  if (slides.length === 0) return;
+  
+  let currentSlide = 0;
+  
+  // Changes the photo every 3000 milliseconds (3 seconds)
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 3000); 
+})();
 </script>
 
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
