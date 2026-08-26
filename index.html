@@ -877,7 +877,7 @@
     background: var(--ivory);
     width: 95%;
     max-width: 560px;
-    max-height: 92vh;
+    max-height: 95vh;
     border-radius: 20px;
     padding: 0;
     position: relative;
@@ -885,7 +885,8 @@
     transition: transform 0.4s ease;
     border: 1px solid rgba(201, 147, 58, 0.3);
     box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
   }
@@ -946,8 +947,8 @@
 
   .gform-wrap iframe {
     width: 100%;
-    height: 100%;
-    min-height: 540px;
+    height: 780px;
+    min-height: 780px;
     border: none;
     display: block;
     /* strip Google Forms default white bg so it blends */
@@ -1520,7 +1521,7 @@
     <div class="gform-wrap">
       <iframe
         id="gform-iframe"
-        src="https://docs.google.com/forms/d/e/1FAIpQLScEf94TU1r2WMb3WEqZV2D7qu1SjdhIw9UkPyksz-PbeaRJ5Q/viewform?embedded=true" width="640" height="1575" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>"
+        src="https://docs.google.com/forms/d/e/1FAIpQLScEf94TU1r2WMb3WEqZV2D7qu1SjdhIw9UkPyksz-PbeaRJ5Q/viewform?embedded=true"
         title="RSVP Form"
         frameborder="0"
         marginheight="0"
@@ -1534,7 +1535,7 @@
     <!-- Footer strip -->
     <div class="gform-notice">
       🔒 Responses are saved directly to a private Google Sheet · 
-      <a href="https://docs.google.com/spreadsheets/d/1cnbsOVtXkHR61yxbHZSyWPdSrwPlTfP6NZzi_ILIF5Q/edit?resourcekey=&gid=567891435#gid=567891435" target="_blank" rel="noopener">Open in full screen ↗</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScEf94TU1r2WMb3WEqZV2D7qu1SjdhIw9UkPyksz-PbeaRJ5Q/viewform" target="_blank" rel="noopener">Open form in full screen ↗</a>
     </div>
 
   </div>
